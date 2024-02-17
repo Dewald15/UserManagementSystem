@@ -12,8 +12,8 @@
         ResultSet rs = st.executeQuery("select * from user where email='" + email + "'");
          // email should be unique so no need for while loop
          // while (rs.next()) {
-            st.executeUpdate("update user set name='" + name + "', mobile='" + mobile + "', domain='" + domain + "' where email='" + email + "'");
-            response.sendRedirect("edit.jsp?msg=valid&email="+ email);
+        st.executeUpdate("update user set name='" + name + "', mobile='" + mobile + "', domain='" + domain + "' where email='" + email + "'");
+        response.sendRedirect("edit.jsp?msg=valid&email="+ email + "&name=" + name + "&mobilenumber=" + mobile + "&domain=" + domain);
          // }
 
     } catch (Exception e) {

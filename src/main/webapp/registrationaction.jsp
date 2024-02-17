@@ -1,5 +1,6 @@
 <%@page import="Project.ConnectionProvider"%>
 <%@page import="java.sql.*"%>
+
 <%
     String name = request.getParameter("name");
     String email = request.getParameter("email");
@@ -21,7 +22,5 @@
         System.out.println("registeraction exception");
         System.out.println(e);
         response.sendRedirect("registration.jsp?msg=invalid");
-
     }
-
 %>

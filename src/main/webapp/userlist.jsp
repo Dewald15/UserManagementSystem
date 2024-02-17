@@ -95,20 +95,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <%@ page import="java.sql.*" %>
-                    <%@ page import="javax.sql.*" %>
+                    <%@page import="java.sql.*" %>
+                    <%@page import="Project.ConnectionProvider"%>
                     <%
                         try {
-                            // String url = "jdbc:mysql://localhost:3306/uuu";
-                            // String username = "root";
-                            // String password = "160991";
-                            String url = "jdbc:mysql://sql8.freesqldatabase.com:3306/sql8684532"; // Establish a connection to the MySQL database
-                            String username = "sql8684532";
-                            String password = "vRNNaS4tDw";
-                            Class.forName("com.mysql.cj.jdbc.Driver");
-                            Connection connection = DriverManager.getConnection(url, username, password);
+                            Connection connection = ConnectionProvider.getConnection();
                             Statement st = connection.createStatement();
-                            Statement st1 = connection.createStatement(ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
                             ResultSet rs = st.executeQuery("select * from user");
                             while (rs.next()) {
                     %>
@@ -119,7 +111,7 @@
                         <td class="align-middle"><%= rs.getString(4) %></td>
                         <td class="actions-column">
                             <a href="remove.jsp?email=<%= rs.getString(2) %>">Remove</a>
-                            <a href="edit.jsp?email=<%= rs.getString(2) %>">Edit</a>
+                            <a href="edit.jsp?email=<%= rs.getString(2) %>&name=<%= rs.getString(1) %>&mobilenumber=<%= rs.getString(3) %>&domain=<%= rs.getString(4) %>">Edit</a>
                         </td>
                     </tr>
                     <%

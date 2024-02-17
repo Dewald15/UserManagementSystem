@@ -124,15 +124,15 @@
                     <div class='editEmail'>Email: <%out.println(email);%></div>
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" name="name" placeholder="Enter Name" required>
+                            <input type="text" name="name" placeholder="Enter Name" value="<%= request.getParameter("name") %>" required>
                         </div>
                         <div class="form-group">
                             <label for="mobilenumber">Mobile Number</label>
-                            <input type="number" name="mobilenumber" placeholder="Enter Mobile Number" required>
+                            <input type="number" name="mobilenumber" placeholder="Enter Mobile Number" value="<%= request.getParameter("mobilenumber") %>" required>
                         </div>
                         <div class="form-group">
                             <label for="domain">Domain</label>
-                            <input type="text" name="domain" placeholder="Enter Domain" required>
+                            <input type="text" name="domain" placeholder="Enter Domain" value="<%= request.getParameter("domain") %>" required>
                         </div>
                         <div class="buttons-container">
                             <input type="submit" value="Submit" class="btn btn-primary">
