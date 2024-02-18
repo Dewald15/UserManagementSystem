@@ -111,7 +111,7 @@
                         <td class="align-middle"><%= rs.getString(4) %></td>
                         <td class="actions-column">
                             <a href="remove.jsp?email=<%= rs.getString(2) %>">Remove</a>
-                            <a href="edit.jsp?email=<%= rs.getString(2) %>&name=<%= rs.getString(1) %>&mobilenumber=<%= rs.getString(3) %>&domain=<%= rs.getString(4) %>">Edit</a>
+                            <a href="edit.jsp?name=<%= rs.getString(1) %>&email=<%= rs.getString(2) %>&mobilenumber=<%= rs.getString(3) %>&domain=<%= rs.getString(4) %>">Edit</a>
                         </td>
                     </tr>
                     <%
