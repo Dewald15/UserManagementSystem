@@ -29,7 +29,7 @@ To set up and run the application, follow these configuration steps:
 
 1. **Run/Debug Configurations:**
    - Use Apache Tomcat version 10.1.18.
-   - Set Catalina base to `C:\Users\user\.SmartTomcat\webtest\webtest`.
+   - Catalina base: `user\.SmartTomcat\servletContainerName`.
    - Deployment directory: `UserManagementSystem\src\main\webapp`.
    - Context path: `/UserManagementSystem.src/main/webapp/registration.jsp`.
    - Server port: 8080.
