@@ -18,7 +18,7 @@
 
     } catch (Exception e) {
         System.out.println("editaction exception");
-        response.sendRedirect("edit.jsp?msg=invalid&email="+ email);
+        response.sendRedirect("edit.jsp?msg=invalid&email="+ email + "&name=" + name + "&mobilenumber=" + mobile + "&domain=" + domain);
         System.out.println(e);
     }
 %>
