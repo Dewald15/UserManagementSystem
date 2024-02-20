@@ -67,6 +67,7 @@ To set up and run the application, follow these configuration steps:
    - Ensure JDK version 21 is installed.
 
 ## Screenshots
+<div style="text-align: center;">
 
 ### 1. **registration.jsp**
 
@@ -91,3 +92,4 @@ To set up and run the application, follow these configuration steps:
 ### 6. **edit.jsp - after successful submit**
 
 ![Screenshot](images/6.png)
+</div>
