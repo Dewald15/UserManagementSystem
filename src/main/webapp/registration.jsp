@@ -107,20 +107,44 @@
                 <div class='signup'>
                     <form action="registrationaction.jsp" method="post">
                         <div class="form-group">
-                            <label for="name">Name</label>
-                            <input type="text" id="name" name="name" placeholder="Enter Name" required>
+                           <label for="name">Name</label>
+                           <%
+                               String nameValue = request.getParameter("name");
+                               if (nameValue == null) {
+                                   nameValue = "";
+                               }
+                           %>
+                           <input type="text" id="name" name="name" placeholder="Enter Name" value="<%= nameValue %>" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" id="email" name="email" placeholder="Enter Email" required>
+                            <%
+                                String emailValue = request.getParameter("email");
+                                if (emailValue == null) {
+                                    emailValue = "";
+                                }
+                            %>
+                            <input type="text" id="email" name="email" placeholder="Enter Email" value="<%= emailValue %>" required>
                         </div>
                         <div class="form-group">
                             <label for="mobilenumber">Mobile Number</label>
-                            <input type="number" id="mobilenumber" name="mobilenumber" placeholder="Enter Mobile Number" required>
+                            <%
+                                String mobilenumberValue = request.getParameter("mobilenumber");
+                                if (mobilenumberValue == null) {
+                                    mobilenumberValue = "";
+                                }
+                            %>
+                            <input type="text" id="mobilenumber" name="mobilenumber" placeholder="Enter Mobile Number" value="<%= mobilenumberValue %>" required>
                         </div>
                         <div class="form-group">
                             <label for="domain">Domain</label>
-                            <input type="text" id="domain" name="domain" placeholder="Enter Domain" required>
+                            <%
+                                String domainValue = request.getParameter("domain");
+                                if (domainValue == null) {
+                                    domainValue = "";
+                                }
+                            %>
+                            <input type="text" id="domain" name="domain" placeholder="Enter Domain" value="<%= domainValue %>" required>
                         </div>
                         <div class="buttons-container">
                             <input type="submit" value="Submit" class="btn btn-primary">
@@ -130,11 +154,12 @@
                 </div>
                 <div class='whysign'>
                     <% String msg = request.getParameter("msg");
-                        if ("valid".equals(msg)) { %>
-                        <h3 class="valid">Successfully Registered!</h3>
-                    <% } %>
-                    <% if ("invalid".equals(msg)) { %>
-                        <h3 class="invalid">Something Went Wrong!</h3>
+                    if ("valid".equals(msg)) { %>
+                    <h3 class="valid">Successfully Registered!</h3>
+                    <% } if ("invalid".equals(msg)) { %>
+                    <h3 class="invalid">Something Went Wrong!</h3>
+                    <% } if ("invalidEmail".equals(msg)) { %>
+                    <h3 class="invalid">Email already exists!</h3>
                     <% } %>
                 </div>
             </div>

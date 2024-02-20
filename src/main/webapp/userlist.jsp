@@ -98,8 +98,9 @@
                     <%@page import="java.sql.*" %>
                     <%@page import="Project.ConnectionProvider"%>
                     <%
+                        Connection connection = null;
                         try {
-                            Connection connection = ConnectionProvider.getConnection();
+                            connection = ConnectionProvider.getConnection();
                             Statement st = connection.createStatement();
                             ResultSet rs = st.executeQuery("select * from user");
                             while (rs.next()) {
@@ -114,10 +115,11 @@
                             <a href="edit.jsp?name=<%= rs.getString(1) %>&email=<%= rs.getString(2) %>&mobilenumber=<%= rs.getString(3) %>&domain=<%= rs.getString(4) %>">Edit</a>
                         </td>
                     </tr>
-                    <%
-                            }
+                    <%  }
+                            connection.close();
                         } catch (Exception e) {
                             e.printStackTrace();
+                            connection.close();
                         }
                     %>
                 </tbody>
