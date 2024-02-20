@@ -65,3 +65,29 @@ To set up and run the application, follow these configuration steps:
 7. **Configuration:**
 
    - Ensure JDK version 21 is installed.
+
+## Screenshots
+
+### 1. **registration.jsp**
+
+![Screenshot](images/1.png)
+
+### 2. **registration.jsp - after successful submit**
+
+![Screenshot](images/2.png)
+
+### 3. **registration.jsp - duplicate email error**
+
+![Screenshot](images/3.png)
+
+### 4. **userlist.jsp**
+
+![Screenshot](images/4.png)
+
+### 5. **edit.jsp**
+
+![Screenshot](images/5.png)
+
+### 6. **edit.jsp - after successful submit**
+
+![Screenshot](images/6.png)

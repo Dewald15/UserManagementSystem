@@ -22,11 +22,13 @@
             #wrapper {
                 font-size: 16px;
                 margin: 20px;
+                overflow-x: auto;
             }
             table {
                 width: 100%;
                 margin-top: 30px;
                 margin-bottom: 20px;
+                white-space: nowrap;
             }
             .UserListHeading {
                 font-size: 18px;
