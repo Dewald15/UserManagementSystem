@@ -145,7 +145,7 @@
                         String msg = request.getParameter("msg");
                         if ("valid".equals(msg)) {
                     %>
-                        <h3 class="valid">Successfully Edited!</h3>
+                        <h3 class="valid">Successfully Changed!</h3>
                     <%}%>
                     <% if ("invalid".equals(msg)) { %>
                         <h3 class="invalid">Something Went Wrong!</h3>
