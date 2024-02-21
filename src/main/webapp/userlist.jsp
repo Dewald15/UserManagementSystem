@@ -97,8 +97,6 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <%@page import="java.sql.*" %>
-                    <%@page import="Project.ConnectionProvider"%>
                     <%
                         Connection connection = null;
                         try {
