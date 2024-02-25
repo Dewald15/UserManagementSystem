@@ -49,6 +49,13 @@ To set up and run the application, follow these configuration steps:
 
 6. **Dependencies:**
 
+   - The application uses MySQL database. Create a schema with the following queries:
+```sql
+create database uuu;
+use uuu;
+create table user
+(name varchar(50), email varchar(50), mobile int(10), domain varchar(50));
+```
    - Add the MySQL JAR file to the project library. Download `mysql-connector-j-8.3.0`.
 
       ```xml
@@ -59,8 +66,6 @@ To set up and run the application, follow these configuration steps:
           <version>8.3.0</version>
       </dependency>
       ```
-
-   - The application uses PHPMyAdmin.co to host the MySQL database.
 
 7. **Configuration:**
 
