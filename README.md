@@ -56,6 +56,12 @@ use uuu;
 create table user
 (name varchar(50), email varchar(50), mobile int(10), domain varchar(50));
 ```
+
+   - In `ConnectionProvider.java`, update the 'username' and 'password' variable values to match your newly created database credentials.
+   ```java
+String username = "yourUsername";
+String password = "yourPassword";
+```
    - Add the MySQL JAR file to the project library. Download `mysql-connector-j-8.3.0`.
 
       ```xml
