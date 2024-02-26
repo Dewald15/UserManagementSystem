@@ -64,14 +64,6 @@ String password = "yourPassword";
 ```
    - Add the MySQL JAR file to the project library. Download `mysql-connector-j-8.3.0`.
 
-      ```xml
-      <!-- Example Maven Dependency -->
-      <dependency>
-          <groupId>mysql</groupId>
-          <artifactId>mysql-connector-java</artifactId>
-          <version>8.3.0</version>
-      </dependency>
-      ```
 
 7. **Configuration:**
 
