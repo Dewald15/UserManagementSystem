@@ -1,4 +1,4 @@
-<%@page import="Project.ConnectionProvider"%>
+<%@page import="main.webapp.Project.ConnectionProvider"%>
 <%@page import="java.sql.*"%>
 <%
     String name = request.getParameter("name");
