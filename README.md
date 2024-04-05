@@ -1,42 +1,35 @@
-# User Management System
+# User Management System Documentation
 
 ## Introduction
 
-This Java Maven web application runs on a Tomcat server and serves as a fundamental web-based user management system. Leveraging JDBC for CRUD (Create, Read, Update, Delete) operations, the application employs JavaServer Pages (JSPs) to provide an intuitive user interface.
+Welcome to the User Management System documentation! This document serves as a guide to understand the architecture, functionality, and usage of the User Management System implemented in Java.
 
-## Project Structure
+### Overview
 
-The core functionality is encapsulated within the 'Project' package, where the `ConnectionProvider.java` file orchestrates the creation of the JDBC driver and Connection object. The web application comprises three main pages:
+The User Management System is a web-based application developed using Java, Maven as the build tool, and Tomcat as the server. It leverages JDBC for CRUD operations (Create, Read, Update, Delete) on user data stored in a database. The application is built following the Model-View-Controller (MVC) architecture, where JavaServer Pages (JSPs) act as the view layer, controllers (servlets) as the controller layer, and models and services handle the business logic and communication with the database.
 
-1. **Add User Page (registration.jsp):**
-   - Allows users to register by submitting relevant information.
-   - Utilizes `registrationaction.jsp` to process data insertion into the database.
-   - Upon completion, redirects to `registration.jsp` with a message parameter indicating the success or failure of the submission.
+### Purpose
 
-2. **User List Page (userlist.jsp):**
-   - Displays a comprehensive list of all registered users.
-   - Enables users to edit or delete existing entries or return to the user registration page.
-   - Deletion triggers forwarding to `remove.jsp` with the email as a parameter, facilitating the removal of the user from the database and subsequent redirection to `userlist.jsp`.
+The primary purpose of the User Management System is to provide a platform for managing user data efficiently. It allows users to perform CRUD operations on user records, enabling administrators or authorized personnel to create, retrieve, update, and delete user information as needed.
 
-3. **Edit Page (edit.jsp):**
-   - Allows modification of user information.
-   - Submission of changes redirects to `editaction.jsp`, where the user with the specified email is located and updated.
-   - After updating, redirects back to `edit.jsp` with all parameters intact to maintain the user's input values.
+### Features
 
-## Configuration Steps
+- **User CRUD Operations:** Perform Create, Read, Update, and Delete operations on user records.
+- **Secure Authentication:** Implement secure authentication mechanisms to ensure only authorized users can access the system.
+- **Role-based Access Control:** Manage user roles and permissions to control access to system functionalities.
+- **User Interface:** Provide a user-friendly interface using JSPs for seamless interaction with the system.
+- **Scalability:** Designed to be scalable to accommodate a growing number of users and data.
+- **Reliability:** Ensure reliability in data storage and retrieval through robust database operations.
 
-To set up and run the application, follow these configuration steps:
+## Getting Started
 
-1. **Run/Debug Configurations:**
-   - Use Apache Tomcat version 10.1.18.
-   - Deployment directory: `UserManagementSystem\src\main\webapp`.
-   - Context path: `/UserManagementSystem.src/main/webapp/registration.jsp`.
-   - Server port: 8080.
-   - Admin port: 8005.
+To get started with the User Management System, follow these steps:
 
-2. **Dependencies:**
+1. **Prerequisites:** Ensure you have Java Development Kit (JDK), Apache Maven, and Apache Tomcat installed on your system.
 
-   - The application uses MySQL database. Create a schema with the following queries:
+2. **Clone the Repository:** Clone the User Management System repository from https://github.com/Dewald15/UserManagementSystem.git.
+
+3. **Database Setup:**    The application uses MySQL database. Create a schema with the following queries:
 ```sql
 create database uuu;
 use uuu;
@@ -44,11 +37,39 @@ create table user
 (name varchar(50), email varchar(50), mobile int(10), domain varchar(50));
 ```
 
-   - In `ConnectionProvider.java`, update the 'username' and 'password' variable values to match your newly created database credentials.
-   ```java
+- In `ConnectionProvider.java`, update the 'username' and 'password' variable values to match your newly created database credentials.
+```java
 String username = "yourUsername";
 String password = "yourPassword";
 ```
+
+4. **Build the Project:** Use Maven to build the project and resolve dependencies.
+
+5. **Deploy to Tomcat:** Deploy the application to Apache Tomcat server.
+   - Use Apache Tomcat version 10.1.18.
+   - Deployment directory: `UserManagementSystem\src\main\webapp`.
+   - Context path: `/UserManagementSystem.src/main/webapp/registration.jsp`.
+   - Server port: 8080.
+   - Admin port: 8005.
+
+6. **Other Configurations**
+   - Mark the 'src' directory as 'Sources Root'
+
+7. **Access the Application:** Access the application through a web browser using the provided URL.
+
+## Usage
+
+Once the User Management System is set up and deployed, users can perform the following actions:
+
+- **Create User:** Add new user records to the system.
+- **View User:** Retrieve user information from the database.
+- **Update User:** Modify existing user details.
+- **Delete User:** Remove user records from the system.
+
+## Contributors
+
+The User Management System project was developed by Dewald van den Berg.
+For any queries or support, please contact vdbergdewald@gmail.com.
 
 ## Screenshots
 <div style="text-align: center;">
