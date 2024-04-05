@@ -6,7 +6,7 @@
     <predefined_log_file id="Tomcat Manager Log" />
     <predefined_log_file id="Tomcat Host Manager Log" />
     <option name="catalinaBase" value="C:\Users\vdber\.SmartTomcat\UserManagementSystem\UserManagementSystem" />
-    <option name="contextPath" value="/UserManagementSystem.src/main/webapp/registration.jsp" />
+    <option name="contextPath" value="/UserManagementSystem.src/main/webapp/views/registration.jsp" />
     <option name="docBase" value="C:\Users\vdber\IdeaProjects\UserManagementSystem\src\main\webapp" />
     <option name="envOptions">
       <map />
