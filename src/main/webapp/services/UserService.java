@@ -4,6 +4,8 @@ import main.webapp.models.User;
 import main.webapp.utils.ConnectionProvider;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class UserService {
     public String registerUser(String name, String email, String mobileNumber, String domain) {
@@ -54,7 +56,6 @@ public class UserService {
             ResultSet resultSet = preparedStatement.executeQuery();
 
             if (resultSet.next()) {
-                System.out.println(resultSet.getString("name"));
                 User user = new User();
                 user.setName(resultSet.getString("name"));
                 user.setEmail(resultSet.getString("email"));
@@ -96,5 +97,35 @@ public class UserService {
             }
             return false;
         }
+    }
+
+    public void deleteUser(String email){
+        try (Connection connection = ConnectionProvider.getConnection();
+            Statement st = connection.createStatement()) {
+            st.executeUpdate("delete from user where email = '" + email + "'");
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public List getAllUsers(){
+        List<User> userList = new ArrayList<>();
+        try {
+            Connection connection = ConnectionProvider.getConnection();
+            Statement st = connection.createStatement();
+            ResultSet rs = st.executeQuery("select * from user");
+
+            while (rs.next()) {
+                User user = new User();
+                user.setName(rs.getString("name"));
+                user.setEmail(rs.getString("email"));
+                user.setContact(rs.getString("mobile"));
+                user.setDomain(rs.getString("domain"));
+                userList.add(user);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return userList;
     }
 }

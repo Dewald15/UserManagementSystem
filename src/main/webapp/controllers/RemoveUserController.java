@@ -1,5 +1,6 @@
 package main.webapp.controllers;
 
+import main.webapp.services.UserService;
 import main.webapp.utils.ConnectionProvider;
 
 import jakarta.servlet.annotation.WebServlet;
@@ -16,12 +17,8 @@ import java.sql.Statement;
 public class RemoveUserController extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String email = request.getParameter("email");
-        try (Connection connection = ConnectionProvider.getConnection();
-             Statement st = connection.createStatement()) {
-            st.executeUpdate("delete from user where email = '" + email + "'");
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+        UserService userService = new UserService();
+        userService.deleteUser(email);
         response.sendRedirect("UserListController");
     }
 }

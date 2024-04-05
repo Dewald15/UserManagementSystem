@@ -1,5 +1,6 @@
 package main.webapp.controllers;
 
+import main.webapp.models.User;
 import main.webapp.services.UserService;
 
 import java.io.IOException;
@@ -20,12 +21,19 @@ public class RegistrationController extends HttpServlet {
         UserService userService = new UserService();
         String result = userService.registerUser(name, email, mobileNumber, domain);
 
+        User user = new User();
+        user.setName(name);
+        user.setEmail(email);
+        user.setContact(mobileNumber);
+        user.setDomain(domain);
+        request.setAttribute("user", user);
+
         if (result.equals("success")) {
-            response.sendRedirect(request.getContextPath() + "/views/registration.jsp?msg=valid&email="+ email + "&name=" + name + "&mobilenumber=" + mobileNumber + "&domain=" + domain);
+            request.getRequestDispatcher("/views/registration.jsp?msg=valid").forward(request, response);
         } else if (result.equals("invalidEmail")) {
-            response.sendRedirect("views/registration.jsp?msg=invalidEmail&email="+ email + "&name=" + name + "&mobilenumber=" + mobileNumber + "&domain=" + domain);
+            request.getRequestDispatcher("/views/registration.jsp?msg=invalidEmail").forward(request, response);
         } else {
-            response.sendRedirect("views/registration.jsp?msg=invalid&email="+ email + "&name=" + name + "&mobilenumber=" + mobileNumber + "&domain=" + domain);
+            request.getRequestDispatcher("/views/registration.jsp?msg=invalid").forward(request, response);
         }
     }
 }

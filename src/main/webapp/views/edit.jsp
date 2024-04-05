@@ -1,3 +1,6 @@
+<%@ page import="main.webapp.models.User" %>
+<%@ page import="main.webapp.services.UserService" %>
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
@@ -16,21 +19,23 @@
             <div id="container">
                 <%
                     String email = request.getParameter("email");
+                    UserService userService = new UserService();
+                    User user = userService.getUserByEmail(email);
                 %>
                 <div class='signup'>
-                    <form action="<%= request.getContextPath() %>/EditController?email=<%= email %>" method="post">
+                    <form action="<%= request.getContextPath() %>/EditController?email=<%= user.getEmail() %>" method="post">
                     <div class='editEmail'>Email: <%out.println(email);%></div>
                         <div class="form-group">
                             <label for="name">Name</label>
-                            <input type="text" name="name" placeholder="Enter Name" value="<%= request.getParameter("name") %>" required>
+                            <input type="text" name="name" placeholder="Enter Name" value="<%= user.getName() %>" required>
                         </div>
                         <div class="form-group">
                             <label for="mobilenumber">Mobile Number</label>
-                            <input type="number" name="mobilenumber" placeholder="Enter Mobile Number" value="<%= request.getParameter("mobilenumber") %>" required>
+                            <input type="number" name="mobilenumber" placeholder="Enter Mobile Number" value="<%= user.getContact() %>" required>
                         </div>
                         <div class="form-group">
                             <label for="domain">Domain</label>
-                            <input type="text" name="domain" placeholder="Enter Domain" value="<%= request.getParameter("domain") %>" required>
+                            <input type="text" name="domain" placeholder="Enter Domain" value="<%= user.getDomain() %>" required>
                         </div>
                         <div class="buttons-container">
                             <input type="submit" value="Submit" class="btn btn-primary">
