@@ -10,13 +10,11 @@ The User Management System is a web-based application developed using Java, Mave
 
 ### Purpose
 
-The primary purpose of the User Management System is to provide a platform for managing user data efficiently. It allows users to perform CRUD operations on user records, enabling administrators or authorized personnel to create, retrieve, update, and delete user information as needed.
+The primary purpose of the User Management System is to provide a platform for managing user data efficiently. It allows users to perform CRUD operations on user records to create, retrieve, update, and delete user information as needed.
 
 ### Features
 
 - **User CRUD Operations:** Perform Create, Read, Update, and Delete operations on user records.
-- **Secure Authentication:** Implement secure authentication mechanisms to ensure only authorized users can access the system.
-- **Role-based Access Control:** Manage user roles and permissions to control access to system functionalities.
 - **User Interface:** Provide a user-friendly interface using JSPs for seamless interaction with the system.
 - **Scalability:** Designed to be scalable to accommodate a growing number of users and data.
 - **Reliability:** Ensure reliability in data storage and retrieval through robust database operations.
