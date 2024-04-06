@@ -53,8 +53,6 @@ String password = "yourPassword";
 6. **Other Configurations**
    - Mark the 'src' directory as 'Sources Root'
 
-7. **Access the Application:** Access the application through a web browser using the provided URL.
-
 ## Usage
 
 Once the User Management System is set up and deployed, users can perform the following actions:
