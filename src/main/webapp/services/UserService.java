@@ -1,8 +1,7 @@
-package main.webapp.services;
+package services;
 
 import main.webapp.models.User;
 import main.webapp.utils.ConnectionProvider;
-
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;

@@ -46,12 +46,12 @@ String password = "yourPassword";
 5. **Deploy to Tomcat:** Deploy the application to Apache Tomcat server.
    - Use Apache Tomcat version 10.1.18.
    - Deployment directory: `UserManagementSystem\src\main\webapp`.
-   - Context path: `/UserManagementSystem.src/main/webapp/registration.jsp`.
+   - Context path: `/`.
    - Server port: 8080.
    - Admin port: 8005.
 
 6. **Other Configurations**
-   - Mark the 'src' directory as 'Sources Root'
+   - Mark the 'webapp' directory as 'Sources Root'
 
 ## Usage
 

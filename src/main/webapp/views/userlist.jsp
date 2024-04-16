@@ -41,8 +41,14 @@
                         <td class="align-middle">${user.getContact()}</td>
                         <td class="align-middle">${user.getDomain()}</td>
                         <td class="actions-column">
-                            <a href="<%= request.getContextPath() %>/RemoveUserController?email=${user.getEmail()}">Remove</a>
-                            <a href="<%= request.getContextPath() %>/views/edit.jsp?email=${user.getEmail()}">Edit</a>
+                            <form action="/RemoveUserController" method="post" style="display: inline;">
+                                <input type="hidden" name="email" value="${user.getEmail()}">
+                                <button type="submit" class="btn btn-primary" onclick="return confirm('Are you sure you want to remove this user?')">Remove</button>
+                            </form>
+                            <form action="/views/edit.jsp" method="post" style="display: inline;">
+                                <input type="hidden" name="email" value="${user.getEmail()}">
+                                <button type="submit" class="btn btn-primary">Edit</button>
+                            </form>
                         </td>
                     </tr>
                 </c:forEach>
@@ -50,7 +56,7 @@
         </table>
     </div>
     <div class="add-user-link">
-        <a href="<%= request.getContextPath() %>/views/registration.jsp" class="btn btn-primary">Add User</a>
+        <a href="/views/registration.jsp" class="btn btn-primary">Add User</a>
     </div>
     <!-- Link to Bootstrap JS and Popper.js (if needed) -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

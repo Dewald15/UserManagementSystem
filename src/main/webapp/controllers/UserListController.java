@@ -1,22 +1,12 @@
-package main.webapp.controllers;
+package controllers;
 
-import main.webapp.models.User;
-import main.webapp.services.UserService;
-import main.webapp.utils.ConnectionProvider;
-
+import services.UserService;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.util.ArrayList;
-import java.util.List;
 
 @WebServlet("/UserListController")
 public class UserListController extends HttpServlet {

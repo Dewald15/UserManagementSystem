@@ -1,5 +1,5 @@
 <%@ page import="main.webapp.models.User" %>
-<%@ page import="main.webapp.services.UserService" %>
+<%@ page import="services.UserService" %>
 
 <!DOCTYPE html>
 <html lang="en">

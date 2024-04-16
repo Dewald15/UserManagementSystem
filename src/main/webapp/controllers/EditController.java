@@ -1,10 +1,10 @@
-package main.webapp.controllers;
+package controllers;
 
 import jakarta.servlet.*;
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.*;
 import java.io.*;
-import main.webapp.services.UserService;
+import services.UserService;
 
 @WebServlet("/EditController")
 public class EditController extends HttpServlet {

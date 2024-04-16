@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
-<%@ page isELIgnored="false" %>
+<%@ page isELIgnored="false" %>/
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +19,7 @@
             </div>
             <div id='container'>
                 <div class='signup'>
-                    <form action="<%= request.getContextPath() %>/RegistrationController" method="post">
+                    <form action="/RegistrationController" method="post">
                         <div class="form-group">
                             <label for="name">Name</label>
                             <input type="text" id="name" name="name" placeholder="Enter Name" value="<c:out value="${user.name}" />" required>
@@ -38,7 +38,7 @@
                         </div>
                         <div class="buttons-container">
                             <input type="submit" value="Submit" class="btn btn-primary">
-                            <a href="<%= request.getContextPath() %>/UserListController" class="btn btn-primary">User List</a>
+                            <a href="/UserListController" class="btn btn-primary">User List</a>
                         </div>
                     </form>
                 </div>

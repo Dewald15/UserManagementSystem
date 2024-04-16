@@ -1,8 +1,7 @@
-package main.webapp.controllers;
+package controllers;
 
 import main.webapp.models.User;
-import main.webapp.services.UserService;
-
+import services.UserService;
 import java.io.IOException;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;

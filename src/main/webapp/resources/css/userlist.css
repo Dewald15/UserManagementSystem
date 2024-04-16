@@ -65,3 +65,22 @@ td {
 .add-user-link a:hover {
     background-color: #0056b3;
 }
+
+.actions-column button {
+    display: inline-block;
+    margin: 5px;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.actions-column button:hover {
+    background-color: #0056b3;
+    text-decoration: none;
+}

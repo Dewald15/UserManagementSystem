@@ -1,21 +1,16 @@
-package main.webapp.controllers;
+package controllers;
 
-import main.webapp.services.UserService;
-import main.webapp.utils.ConnectionProvider;
+import services.UserService;
 
 import jakarta.servlet.annotation.WebServlet;
 import jakarta.servlet.http.HttpServlet;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.sql.Statement;
 
 @WebServlet("/RemoveUserController")
 public class RemoveUserController extends HttpServlet {
-    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException {
+    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws IOException {
         String email = request.getParameter("email");
         UserService userService = new UserService();
         userService.deleteUser(email);
